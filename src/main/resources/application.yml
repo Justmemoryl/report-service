@@ -1,0 +1,37 @@
+server:
+  port: 8025  # 8026
+
+spring:
+  application:
+    name: report-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/justmemoryl?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: lp243832
+  # jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        # 使用hibernate自定义表名/字段名
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: false
+  # RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+# 服务注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://118.24.20.210:8001/eureka/,http://118.24.20.210:8002/eureka/
+
+logging:
+  config: classpath:logback-spring.xml
+  # path: /home/jml/logs/
+  # path: D:\\Workspace\\Justmemoryl\\logs\\
+  level:
+    root: info
