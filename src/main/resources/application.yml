@@ -13,7 +13,7 @@ spring:
     hibernate:
       ddl-auto: update
       naming:
-        # Ê¹ÓÃhibernate×Ô¶¨Òå±íÃû/×Ö¶ÎÃû
+        # ä½¿ç”¨hibernateè‡ªå®šä¹‰è¡¨å/å­—æ®µå
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: false
   # RabbitMQ
@@ -23,11 +23,13 @@ spring:
     username: guest
     password: guest
 
-# ·şÎñ×¢²áÖĞĞÄµØÖ·
+# æœåŠ¡æ³¨å†Œä¸­å¿ƒåœ°å€
 eureka:
   client:
     serviceUrl:
       defaultZone: http://118.24.20.210:8001/eureka/,http://118.24.20.210:8002/eureka/
+    register-with-eureka: true
+    fetch-registry: true
 
 logging:
   config: classpath:logback-spring.xml
